@@ -1,9 +1,4 @@
-const hosts = {
-  proxyflare: "proxyflare.works",
-  localhost: "http://localhost:8788",
-}
-
-export const docsRoute = (host = hosts.proxyflare) => ({
+export const docsRoute = (host) => ({
   from: { pattern: `${host}/docusaurus/*` },
   to: {
     url: "https://docusaurus-on-proxyflare.vercel.app/",
@@ -18,7 +13,7 @@ export const docsRoute = (host = hosts.proxyflare) => ({
     },
   },
 })
-export const wordPressRoute = (host = hosts.proxyflare) => ({
+export const wordPressRoute = (host) => ({
   from: { pattern: `${host}/wordpress/*` },
   to: {
     url: "https://wordpress-on-proxyflare.xyz/",
@@ -27,17 +22,17 @@ export const wordPressRoute = (host = hosts.proxyflare) => ({
     },
   },
 })
-export const apiRoute = (host = hosts.proxyflare) => ({
+export const apiRoute = (host) => ({
   from: { pattern: `${host}/api/*` },
   to: { url: "https://proxyflare-api-tutorial.networkchimp.workers.dev" },
 })
 
-export const redirectRoute = (host = hosts.proxyflare) => ({
+export const redirectRoute = (host) => ({
   from: { pattern: `${host}/redirect` },
   to: { url: "example.com", statusCode: 307 },
 })
 
-export const devConfig = (host = hosts.proxyflare) => ({
+export const devConfig = (host) => ({
   global: { debug: true },
   routes: [
     docsRoute(host),
