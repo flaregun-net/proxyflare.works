@@ -1,0 +1,16 @@
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+
+.experiment {
+  max-height: 200px;
+  overflow-y: hidden;
+  /*Transition time is increased to accomodate the height */
+  transition: max-height 0.7s linear;
+}
+
+.expanded {
+  max-height: 1000px;
+}

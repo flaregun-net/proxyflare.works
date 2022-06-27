@@ -1,0 +1,29 @@
+.wrapper {
+  font-size: 14;
+  font-weight: 600;
+
+  >div {
+    display: inline-block;
+
+    &:first-child {
+      padding-right: 4px;
+    }
+
+    &:last-child {
+      padding-left: 4px;
+    }
+  }
+}
+
+.hostname {
+  color: var(--ifm-color-gray-600)
+}
+
+.pathname {
+  color: var(--ifm-color-gray-200)
+}
+
+.arrow {
+  position: relative;
+  top: -2px;
+}
