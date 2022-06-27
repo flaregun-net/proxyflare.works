@@ -5,10 +5,10 @@ export const docsRoute = (host) => ({
     website: {
       mode: "spa" as const,
       resources: [
-        `${host}/docusaurus/img/*`,
-        `${host}/docusaurus/katex/*`,
-        `${host}/docusaurus/assets/*`,
-        `${host}/docusaurus/manifest.json`,
+        `${host}/docs/img/*`,
+        `${host}/docs/katex/*`,
+        `${host}/docs/assets/*`,
+        `${host}/docs/manifest.json`,
       ],
     },
   },
