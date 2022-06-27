@@ -1,5 +1,5 @@
 export const docsRoute = (host) => ({
-  from: { pattern: `${host}/docusaurus/*` },
+  from: { pattern: `${host}/docs/*` },
   to: {
     url: "https://docusaurus-on-proxyflare.vercel.app/",
     website: {
