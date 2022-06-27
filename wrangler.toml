@@ -1,0 +1,8 @@
+compatibility_date = "2022-02-15"
+name = "coming-soon"
+type = "javascript"
+
+workers_dev = false
+account_id = "47c1a8f216f7ad13364af709f4fa265a"
+zone_id = "d9fb341bb802ac6b06c0984fed891331"
+routes = ["flaregun.net"]
