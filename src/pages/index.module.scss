@@ -8,22 +8,24 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  img {
+    width: 120px;
+    width: 120px;
+  }
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
   }
 }
 
-.buttons {
+.links {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.shadow {
-  -moz-box-shadow: 3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow: 3px 3px 5px 6px #ccc;
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+  margin: 1rem 0;
 }

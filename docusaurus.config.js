@@ -1,7 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github")
+const path = require("path")
+const lightCodeTheme = require("prism-react-renderer/themes/vsLight")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
 /** @type {import('@docusaurus/types').Config} */
@@ -10,58 +11,100 @@ const config = {
   tagline: "Try out the configurations below",
   url: "https://proxyflare.works",
   baseUrl: "/",
+  trailingSlash: true,
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "flaregun-net", // Usually your GitHub org/user name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-  },
+  onBrokenMarkdownLinks: "throw",
+  favicon: "/docs/img/favicon-32x32.png",
+  organizationName: "flaregun",
+  projectName: "flaregun",
+  staticDirectories: ["static", "public"],
 
   presets: [
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        docs: {
+          breadcrumbs: true,
+          // https://docusaurus.io/docs/docs-introduction#docs-only-mode
+          docItemComponent: require.resolve(
+            "./src/components/CustomDocItem/index.tsx",
+          ),
+          exclude: ["**/*.wip"],
+        },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
+    ],
+  ],
+  plugins: [
+    "docusaurus-plugin-sass",
+    [
+      path.resolve(
+        __dirname,
+        "./src/plugins/docusaurus-plugin-segment-analytics",
+      ),
+      {
+        prodKey: "RQXoHRpNcmBKllUDihjDjupGv4AHn5TB",
+        devKey: "FRKElp5cyMax6GAdM8OVyNMIFVppgEgp",
+        // boolean (defaults to false) on whether you want
+        // to include analytics.page() automatically
+        trackPage: true,
+        // number (defaults to 50); time to wait after a route update before it should
+        // track the page change, to implement this, make sure your `trackPage` property is set to `true`
+        // trackPageDelay: 50,
+      },
+    ],
+    [
+      path.resolve(__dirname, "./src/plugins/docusaurus-plugin-google-gtm"),
+      {
+        trackingID: "GTM-PF5MQ2Z",
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ["http", "nginx", "markdown"],
+      },
+
       navbar: {
+        hideOnScroll: true,
         title: "Proxyflare",
         logo: {
+          target: "_self",
           alt: "Proxyflare Logo",
-          src: "img/logo.svg",
+          src: "/img/logo.svg",
+          srcDark: "/img/logo.svg",
+          href: "http://localhost:3000",
         },
         items: [
           {
+            to: "https://flaregun.net",
+            label: "Docs",
             position: "left",
-            label: "Getting Started",
-            href: "https://flaregun.net/docs/latest/proxyflare/plugin/getting-started",
           },
         ],
       },
       footer: {
         style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} Flaregun, Inc.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
     }),
 }

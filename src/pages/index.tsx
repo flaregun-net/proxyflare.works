@@ -1,10 +1,11 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import HomepageFeatures from "@site/src/components/HomepageFeatures"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
 import React from "react"
+import styles from "./index.module.scss"
+
+import HomepageFeatures from "../components/HomepageFeatures"
 import SyntaxHighlighter from "../components/SyntaxHighlighter"
-import styles from "./index.module.css"
 
 React
 
@@ -31,7 +32,6 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
 
         <div
           style={{
@@ -47,6 +47,8 @@ function HomepageHeader() {
             value={scaffold}
           />
         </div>
+
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
     </header>
   )

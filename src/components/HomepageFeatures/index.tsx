@@ -1,11 +1,11 @@
+import clsx from "clsx"
+import React from "react"
 import {
   apiRoute,
   docsRoute,
   redirectRoute,
   wordPressRoute,
-} from "@site/devConfig"
-import clsx from "clsx"
-import React from "react"
+} from "../../../devConfig"
 import SyntaxHighlighter from "../SyntaxHighlighter"
 import styles from "./styles.module.css"
 
