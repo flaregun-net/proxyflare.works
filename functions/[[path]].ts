@@ -1,5 +1,5 @@
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
-import { devConfig } from "../../devConfig"
+import { devConfig } from "../devConfig"
 
 const hosts = {
   proxyflare: "proxyflare.works",

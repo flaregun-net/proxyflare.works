@@ -1,4 +1,4 @@
-export const isBrowser = (fn?: () => unknown) => {
+const isBrowser = (fn?: () => unknown) => {
   try {
     if (typeof window !== "undefined") {
       return fn?.()
