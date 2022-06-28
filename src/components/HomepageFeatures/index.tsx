@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import React from "react"
+import React, { useMemo } from "react"
 import {
   apiRoute,
   docsRoute,
@@ -19,59 +19,6 @@ type FeatureItem = {
 const removeWildcards = (pattern: string) =>
   new URL(`https://${pattern.replace(/\/?\*/, "")}`).href
 
-const FeatureList: FeatureItem[] = [
-  {
-    title: "Send traffic to another web service",
-    url: removeWildcards(apiRoute().from.pattern),
-    description: (
-      <SyntaxHighlighter
-        value={`const apiRoute = ${JSON.stringify(apiRoute(), null, 2)}`}
-      />
-    ),
-  },
-  {
-    title: "Redirect traffic to another domain",
-    url: removeWildcards(redirectRoute().from.pattern),
-    // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-    description: (
-      <SyntaxHighlighter
-        value={`const redirectRoute = ${JSON.stringify(
-          redirectRoute(),
-          null,
-          2,
-        )}`}
-      />
-    ),
-  },
-  {
-    title: "Mount your docs website",
-    url: removeWildcards(docsRoute().from.pattern),
-    description: (
-      <SyntaxHighlighter
-        value={`const docusaurusRoute = ${JSON.stringify(
-          docsRoute(),
-          null,
-          2,
-        )}`}
-      />
-    ),
-  },
-  {
-    title: "Mount your Wordpress blog",
-    url: removeWildcards(wordPressRoute().from.pattern),
-    // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-    description: (
-      <SyntaxHighlighter
-        value={`const wordpressRoute = ${JSON.stringify(
-          wordPressRoute(),
-          null,
-          2,
-        )}`}
-      />
-    ),
-  },
-]
-
 function Feature({ title, Svg, url, description }: FeatureItem) {
   return (
     <div className={clsx("col col--6")}>
@@ -90,11 +37,66 @@ function Feature({ title, Svg, url, description }: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  const featureList = useMemo(() => {
+    return [
+      {
+        title: "Send traffic to another web service",
+        url: removeWildcards(apiRoute().from.pattern),
+        description: (
+          <SyntaxHighlighter
+            value={`const apiRoute = ${JSON.stringify(apiRoute(), null, 2)}`}
+          />
+        ),
+      },
+      {
+        title: "Redirect traffic to another domain",
+        url: removeWildcards(redirectRoute().from.pattern),
+        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+        description: (
+          <SyntaxHighlighter
+            value={`const redirectRoute = ${JSON.stringify(
+              redirectRoute(),
+              null,
+              2,
+            )}`}
+          />
+        ),
+      },
+      {
+        title: "Mount your docs website",
+        url: removeWildcards(docsRoute().from.pattern),
+        description: (
+          <SyntaxHighlighter
+            value={`const docusaurusRoute = ${JSON.stringify(
+              docsRoute(),
+              null,
+              2,
+            )}`}
+          />
+        ),
+      },
+      {
+        title: "Mount your Wordpress blog",
+        url: removeWildcards(wordPressRoute().from.pattern),
+        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+        description: (
+          <SyntaxHighlighter
+            value={`const wordpressRoute = ${JSON.stringify(
+              wordPressRoute(),
+              null,
+              2,
+            )}`}
+          />
+        ),
+      },
+    ]
+  }, [])
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
+          {featureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>

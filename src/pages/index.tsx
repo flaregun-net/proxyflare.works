@@ -2,12 +2,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
 import React from "react"
-import styles from "./index.module.scss"
-
 import HomepageFeatures from "../components/HomepageFeatures"
 import SyntaxHighlighter from "../components/SyntaxHighlighter"
-
-React
+import styles from "./index.module.scss"
 
 const scaffold = `
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
