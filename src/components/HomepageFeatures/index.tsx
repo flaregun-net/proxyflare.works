@@ -35,17 +35,21 @@ function Feature({ title, Svg, url, description }: FeatureItem) {
     </div>
   )
 }
-
 export default function HomepageFeatures(): JSX.Element {
   const featureList = useMemo(() => {
     const { hostname } = window.location
+
     return [
       {
         title: "Send traffic to another web service",
         url: removeWildcards(apiRoute(hostname).from.pattern),
         description: (
           <SyntaxHighlighter
-            value={`const apiRoute = ${JSON.stringify(apiRoute(), null, 2)}`}
+            value={`const apiRoute = ${JSON.stringify(
+              apiRoute(hostname),
+              null,
+              2,
+            )}`}
           />
         ),
       },
@@ -56,7 +60,7 @@ export default function HomepageFeatures(): JSX.Element {
         description: (
           <SyntaxHighlighter
             value={`const redirectRoute = ${JSON.stringify(
-              redirectRoute(),
+              redirectRoute(hostname),
               null,
               2,
             )}`}
@@ -69,7 +73,7 @@ export default function HomepageFeatures(): JSX.Element {
         description: (
           <SyntaxHighlighter
             value={`const docusaurusRoute = ${JSON.stringify(
-              docsRoute(),
+              docsRoute(hostname),
               null,
               2,
             )}`}
@@ -83,7 +87,7 @@ export default function HomepageFeatures(): JSX.Element {
         description: (
           <SyntaxHighlighter
             value={`const wordpressRoute = ${JSON.stringify(
-              wordPressRoute(),
+              wordPressRoute(hostname),
               null,
               2,
             )}`}

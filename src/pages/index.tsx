@@ -1,3 +1,4 @@
+import BrowserOnly from "@docusaurus/BrowserOnly"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
@@ -52,8 +53,6 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext()
-
   return (
     <Layout
       title="Proxyflare works"
@@ -61,7 +60,9 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <BrowserOnly fallback={<div>Loading...</div>}>
+          {() => <HomepageFeatures />}
+        </BrowserOnly>
       </main>
     </Layout>
   )
