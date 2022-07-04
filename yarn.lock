@@ -2352,11 +2352,6 @@
     ts-node "^9"
     tslib "^2"
 
-"@flaregun-net/proxyflare-for-pages@0.0.174":
-  version "0.0.174"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.174/59eaffadec2a73b34414f364ebc28e913dec073ad6bdacb4ed661d5bba2455dc#f82aad08197354cdacaf2a2f6f7f029f889bce24"
-  integrity sha512-Lcj5mU2CEht0Vy75FmtdfYSL3KChHJVHMpAv7MqEIwa/VSaujo1SA7qPln3NBDOfVx43tcZb4nZB+3c0gdZT2Q==
-
 "@graphiql/toolkit@^0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@graphiql/toolkit/-/toolkit-0.4.2.tgz#34de819add64672f3f7d4830dffb2094fb8d5366"
