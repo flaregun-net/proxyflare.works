@@ -14,7 +14,7 @@ export const docsRoute = (host: string) => ({
   },
 })
 export const wordPressRoute = (host: string) => ({
-  from: { pattern: `${host}/wordpress/*` },
+  from: { pattern: `${host}/blog/*` },
   to: {
     url: "https://wordpress-on-proxyflare.xyz/",
     website: {
