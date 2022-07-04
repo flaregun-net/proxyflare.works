@@ -1,13 +1,3 @@
-const isBrowser = (fn?: () => unknown) => {
-  try {
-    if (typeof window !== "undefined") {
-      return fn?.()
-    }
-  } catch (err) {
-    return false
-  }
-}
-
 export const docsRoute = (host: string) => ({
   from: { pattern: `${host}/docs/*` },
   to: {
@@ -38,7 +28,7 @@ export const apiRoute = (host: string) => ({
 })
 
 export const redirectRoute = (host: string) => ({
-  from: { pattern: `${host}/redirect` },
+  from: { pattern: `${host}/redirect/*` },
   to: { url: "example.com", statusCode: 307 },
 })
 
