@@ -29,7 +29,7 @@ function Feature({ title, Svg, url, description }: FeatureItem) {
       )}
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <a href={url}>{`See it work at ${url}`}</a>
+        <a href={url}>{`Try it at ${url}`}</a>
         <p>{description}</p>
       </div>
     </div>
@@ -38,10 +38,11 @@ function Feature({ title, Svg, url, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   const featureList = useMemo(() => {
+    const { hostname } = window.location
     return [
       {
         title: "Send traffic to another web service",
-        url: removeWildcards(apiRoute().from.pattern),
+        url: removeWildcards(apiRoute(hostname).from.pattern),
         description: (
           <SyntaxHighlighter
             value={`const apiRoute = ${JSON.stringify(apiRoute(), null, 2)}`}
@@ -50,7 +51,7 @@ export default function HomepageFeatures(): JSX.Element {
       },
       {
         title: "Redirect traffic to another domain",
-        url: removeWildcards(redirectRoute().from.pattern),
+        url: removeWildcards(redirectRoute(hostname).from.pattern),
         // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
         description: (
           <SyntaxHighlighter
@@ -64,7 +65,7 @@ export default function HomepageFeatures(): JSX.Element {
       },
       {
         title: "Mount your docs website",
-        url: removeWildcards(docsRoute().from.pattern),
+        url: removeWildcards(docsRoute(hostname).from.pattern),
         description: (
           <SyntaxHighlighter
             value={`const docusaurusRoute = ${JSON.stringify(
@@ -77,7 +78,7 @@ export default function HomepageFeatures(): JSX.Element {
       },
       {
         title: "Mount your Wordpress blog",
-        url: removeWildcards(wordPressRoute().from.pattern),
+        url: removeWildcards(wordPressRoute(hostname).from.pattern),
         // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
         description: (
           <SyntaxHighlighter
