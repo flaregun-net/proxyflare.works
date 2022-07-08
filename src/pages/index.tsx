@@ -1,5 +1,6 @@
 import BrowserOnly from "@docusaurus/BrowserOnly"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import LoadingIcon from "@site/static/icons/loading.svg"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
 import React from "react"
@@ -60,7 +61,20 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main>
-        <BrowserOnly fallback={<div>Loading...</div>}>
+        <BrowserOnly
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 1000,
+              }}
+            >
+              <LoadingIcon />
+            </div>
+          }
+        >
           {() => <HomepageFeatures />}
         </BrowserOnly>
       </main>
