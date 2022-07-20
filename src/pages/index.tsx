@@ -16,6 +16,7 @@ export const onRequest = [
     config: {
       routes: [
         apiRoute,
+        websocketRoute,
         wordpressRoute,
         docusaurusRoute,
         redirectRoute,

@@ -4,6 +4,7 @@ import {
   apiRoute,
   docsRoute,
   redirectRoute,
+  websocketRoute,
   wordPressRoute,
 } from "../../../devConfig"
 import SyntaxHighlighter from "../SyntaxHighlighter"
@@ -47,6 +48,19 @@ export default function HomepageFeatures(): JSX.Element {
           <SyntaxHighlighter
             value={`const apiRoute = ${JSON.stringify(
               apiRoute(hostname),
+              null,
+              2,
+            )}`}
+          />
+        ),
+      },
+      {
+        title: "Send traffic over a websocket",
+        url: removeWildcards(websocketRoute(hostname).from.pattern),
+        description: (
+          <SyntaxHighlighter
+            value={`const websocketRoute = ${JSON.stringify(
+              websocketRoute(hostname),
               null,
               2,
             )}`}

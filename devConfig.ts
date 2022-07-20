@@ -27,6 +27,11 @@ export const apiRoute = (host: string) => ({
   to: { url: "https://proxyflare-api-tutorial.networkchimp.workers.dev" },
 })
 
+export const websocketRoute = (host: string) => ({
+  from: { pattern: `${host}/ws/*` },
+  to: { url: "https://websocket-app.networkchimp.workers.dev" },
+})
+
 export const redirectRoute = (host: string) => ({
   from: { pattern: `${host}/redirect/*` },
   to: { url: "example.com", statusCode: 307 },
@@ -38,6 +43,7 @@ export const devConfig = (host: string) => ({
     docsRoute(host),
     wordPressRoute(host),
     apiRoute(host),
+    websocketRoute(host),
     redirectRoute(host),
   ],
 })
