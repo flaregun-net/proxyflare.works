@@ -111,7 +111,7 @@ export default function HomepageFeatures(): JSX.Element {
       },
       {
         title: "Serve static files such as robots.txt",
-        url: staticRoute(hostname).from.pattern,
+        url: removeWildcards(staticRoute(hostname).from.pattern),
         // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
         description: (
           <SyntaxHighlighter
