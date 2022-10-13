@@ -4,6 +4,7 @@ import {
   apiRoute,
   docsRoute,
   redirectRoute,
+  staticRoute,
   websocketRoute,
   wordPressRoute,
 } from "../../../devConfig"
@@ -102,6 +103,20 @@ export default function HomepageFeatures(): JSX.Element {
           <SyntaxHighlighter
             value={`const wordpressRoute = ${JSON.stringify(
               wordPressRoute(hostname),
+              null,
+              2,
+            )}`}
+          />
+        ),
+      },
+      {
+        title: "Serve static files such as robots.txt",
+        url: staticRoute(hostname).from.pattern,
+        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+        description: (
+          <SyntaxHighlighter
+            value={`const staticRoute = ${JSON.stringify(
+              staticRoute(hostname),
               null,
               2,
             )}`}

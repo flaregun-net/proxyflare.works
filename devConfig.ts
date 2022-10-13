@@ -37,6 +37,11 @@ export const redirectRoute = (host: string) => ({
   to: { url: "example.com", statusCode: 307 },
 })
 
+export const staticRoute = (host: string) => ({
+  from: { pattern: `${host}/text` },
+  to: { text: "hello bro" },
+})
+
 export const devConfig = (host: string) => ({
   global: { debug: true },
   routes: [
@@ -45,5 +50,6 @@ export const devConfig = (host: string) => ({
     apiRoute(host),
     websocketRoute(host),
     redirectRoute(host),
+    staticRoute(host),
   ],
 })
