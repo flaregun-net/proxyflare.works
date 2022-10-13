@@ -2,6 +2,7 @@ import Link from "@docusaurus/Link"
 import GithubIcon from "@site/static/icons/github.svg"
 import TwitterIcon from "@site/static/icons/twitter.svg"
 import React from "react"
+import gg from "../../../package.json"
 import styles from "./styles.module.scss"
 
 const CustomFooter = () => (
@@ -17,7 +18,8 @@ const CustomFooter = () => (
       />
     </div> */}
     <div className={styles["copyright"]}>
-      {`© ${new Date().getFullYear()} Flaregun Inc. All rights reserved`}
+      {JSON.stringify(gg)}
+      {`© ${new Date().getFullYear()} yooo Flaregun Inc. All rights reserved`}
     </div>
     <div className={styles["footerSocialIconsWrapper"]}>
       <div className={styles["socialBrands"]}>

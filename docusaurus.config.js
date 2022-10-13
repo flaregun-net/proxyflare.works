@@ -5,6 +5,11 @@ const path = require("path")
 const lightCodeTheme = require("prism-react-renderer/themes/vsLight")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
+const appVersion =
+  require("./package.json")["dependencies"][
+    "@flaregun-net/proxyflare-for-pages"
+  ]
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Proxyflare works",
@@ -18,7 +23,9 @@ const config = {
   organizationName: "flaregun",
   projectName: "flaregun",
   staticDirectories: ["static", "public"],
-
+  customFields: {
+    appVersion,
+  },
   presets: [
     [
       "classic",
@@ -104,7 +111,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} Flaregun, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Flaregun, Inc. (Version ${appVersion})`,
       },
     }),
 }
