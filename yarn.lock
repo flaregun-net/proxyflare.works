@@ -2149,10 +2149,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@cloudflare/workers-types@3.18.0":
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-3.18.0.tgz#b4177cbe9306d7df4654db594d6e77c036341d2e"
-  integrity sha512-ehKOJVLMeR+tZkYhWEaLYQxl0TaIZu/kE86HF3/RidR8Xv5LuQxpbh+XXAoKVqsaphWLhIgBhgnlN5HGdheXSQ==
+"@cloudflare/workers-types@3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-3.14.0.tgz#1ad397d311203ce6c5322837c9587de8230886fa"
+  integrity sha512-F6lZuzu/vNl9AxOq1U3x2UCi68bcE1O59cKGQ5ntRh3lGQfd3vers6NUag02T7P+qFCHaAp78QN6fRmq12Y3iA==
 
 "@codemirror/highlight@^0.19.0":
   version "0.19.7"
@@ -2645,11 +2645,6 @@
     make-error "^1"
     ts-node "^9"
     tslib "^2"
-
-"@flaregun-net/proxyflare-for-pages@0.0.200":
-  version "0.0.200"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.200/744175a2f76893c48050bdade103abad2f799aa1#744175a2f76893c48050bdade103abad2f799aa1"
-  integrity sha512-K1F2yrBkm72b/wEW5GkxzjVT5CQrziWJWgzKyRs43At+imqNZZ5oaAA6Q05baf2HBx0c8FKezn5WWtvYsMC2Gw==
 
 "@graphiql/toolkit@^0.4.2":
   version "0.4.2"
