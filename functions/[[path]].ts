@@ -7,9 +7,9 @@ const hosts = {
 }
 
 export const onRequest: PagesFunction<{ HOSTNAME: string }>[] = [
-  (({ env }) => {
-    console.log(`env.HOSTNAME`, env.HOSTNAME)
+  (thing) => {
+    console.log(`env.HOSTNAME`, thing.env.HOSTNAME)
 
-    return proxyflare({ config: devConfig(env.HOSTNAME) })
-  })(),
+    return proxyflare({ config: devConfig(thing.env.HOSTNAME) })(thing)
+  },
 ]
