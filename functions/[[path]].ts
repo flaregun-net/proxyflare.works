@@ -6,4 +6,10 @@ const hosts = {
   localhost: "http://localhost:8788",
 }
 
-export const onRequest = [proxyflare({ config: devConfig(hosts.proxyflare) })]
+export const onRequest = [
+  ({ env }) => {
+    console.log(`env.HOSTNAME`, env.HOSTNAME)
+
+    return proxyflare({ config: devConfig(env.HOSTNAME) })
+  },
+]
