@@ -6,7 +6,7 @@ const hosts = {
   localhost: "http://localhost:8788",
 }
 
-export const onRequest = [
+export const onRequest: PagesFunction<{ HOSTNAME: string }>[] = [
   ({ env }) => {
     console.log(`env.HOSTNAME`, env.HOSTNAME)
 
