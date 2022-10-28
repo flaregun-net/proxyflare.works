@@ -6,4 +6,6 @@ const hosts = {
   localhost: "http://localhost:8788",
 }
 
+console.log(`process.env.HOSTNAME`, process.env.HOSTNAME)
+
 export const onRequest = [proxyflare({ config: devConfig(hosts.proxyflare) })]
