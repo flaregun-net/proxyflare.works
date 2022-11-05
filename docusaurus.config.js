@@ -19,7 +19,7 @@ const config = {
   trailingSlash: true,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  favicon: "/img/favicon-32x32.png",
+  favicon: "/img/favicon.ico",
   organizationName: "flaregun",
   projectName: "flaregun",
   staticDirectories: ["static", "public"],
