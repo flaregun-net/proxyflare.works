@@ -1,10 +1,11 @@
 import { devConfig } from "@flaregun-net/proxyflare-core"
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
 
+// This function runs on every request to proxyflare.works and proxyflare.xyz
+// If we're on proxyflare.works, the proxyflare-for-pages plugin is injected
+// If we're on proxyflare.xyz, we do nothing because proxyflare is mounted via the proxyflare-dev worker
 export const onRequest: PagesFunction<{ HOSTNAME: string }>[] = [
   (context) => {
-    // Here, devConfig isn't actually used in development because proxyflare-for-pages only runs in production (on proxyflare.works)
-    // In development, the proxyflare-core's local devConfig file is injected into a worker mounted on the dev site (proxyflare.xyz)
     return context.env.HOSTNAME === "proxyflare.works"
       ? proxyflare({ config: devConfig(context.env.HOSTNAME) })(context)
       : context.next()
