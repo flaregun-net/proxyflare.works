@@ -41,15 +41,3 @@ export const staticRoute = (host: string) => ({
   from: { pattern: `${host}/text` },
   to: { text: "hello bro" },
 })
-
-export const devConfig = (host: string) => ({
-  global: { debug: true },
-  routes: [
-    docsRoute(host),
-    wordPressRoute(host),
-    apiRoute(host),
-    websocketRoute(host),
-    redirectRoute(host),
-    staticRoute(host),
-  ],
-})
