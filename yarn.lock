@@ -2759,26 +2759,26 @@
     ts-node "^9"
     tslib "^2"
 
-"@flaregun-net/app-utils@^0.0.205":
-  version "0.0.205"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.205/e1d51b8a8962f5befdbf9eb5639e77f5969d361d#e1d51b8a8962f5befdbf9eb5639e77f5969d361d"
-  integrity sha512-OvrUUXQPS3Hg6LC6vTsnuepmTyJdSyHdn2/43iI9YgbomO8isLJJ7i7tCFg/y90kA4oVnmoNTbuRLtqaXG9IKg==
+"@flaregun-net/app-utils@^0.0.208":
+  version "0.0.208"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.208/e18b5a1ddebed451af309c932c57ad01b4af7add#e18b5a1ddebed451af309c932c57ad01b4af7add"
+  integrity sha512-96zS/BLRNiyAPqnGnK6IzWMXKhfwBXN7fYYPMUkeuNABx0XJWisfyLoHyZR/IiUXSyE229k5WAt0tSZkOxlnjQ==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@0.0.205":
-  version "0.0.205"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.205/2f1e2cc8de92ec427ec81aef356806ff679c7b2f#2f1e2cc8de92ec427ec81aef356806ff679c7b2f"
-  integrity sha512-syoNrvIJWIAEQHufi74Bat4eYoR36QoF+R7eD/XnmrKpr1NZ/cw349+PhHdw9M5Qx9K31yoLX9FU79QeIv+MGw==
+"@flaregun-net/proxyflare-core@0.0.208":
+  version "0.0.208"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.208/b0241be639707ae3d2099f2be742c7294d164ab0#b0241be639707ae3d2099f2be742c7294d164ab0"
+  integrity sha512-pFrQ1NxGAjQ3ux6oyik+mc9QiuE+fferGc4KT56XLRiicOWMeRYcDJVjrMX2BYn55fNOOAOqDbeNcdK3CnxLzg==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.205"
+    "@flaregun-net/app-utils" "^0.0.208"
     joi "^17.6.0"
     zod "^3.17.3"
 
-"@flaregun-net/proxyflare-for-pages@0.0.205":
-  version "0.0.205"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.205/1d7a8376d20b4eeadb93243d09fe101afcd270fd#1d7a8376d20b4eeadb93243d09fe101afcd270fd"
-  integrity sha512-cBuF8sb0kwCMKs/gj314HuF0IjZOwp1dbQ6tV2guxSDADmDjcBIcgwKS5gywToS0VldbBbffWhah++gPkwEVIA==
+"@flaregun-net/proxyflare-for-pages@0.0.208":
+  version "0.0.208"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.208/e6f4ffbd06556a84000eb79e89b01519b9206748#e6f4ffbd06556a84000eb79e89b01519b9206748"
+  integrity sha512-2yf7ZjaUot4P/GJs5Xcw4HCFlmtXQyl4cdkwL+6UFB9PeeHCA8G03FbVvqaEEhK5cr7cl7+CZVgeX2rEQEV6mg==
 
 "@graphiql/toolkit@^0.4.2":
   version "0.4.2"

@@ -20,8 +20,8 @@
   "dependencies": {
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
-    "@flaregun-net/proxyflare-core": "0.0.205",
-    "@flaregun-net/proxyflare-for-pages": "0.0.205",
+    "@flaregun-net/proxyflare-core": "0.0.208",
+    "@flaregun-net/proxyflare-for-pages": "0.0.208",
     "@mdx-js/react": "^1.6.21",
     "algoliasearch-helper": "^3.7.4",
     "clsx": "^1.1.1",
