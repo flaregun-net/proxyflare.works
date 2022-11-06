@@ -1,6 +1,4 @@
-import BrowserOnly from "@docusaurus/BrowserOnly"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import LoadingIcon from "@site/static/icons/loading.svg"
 import Polygon from "@site/static/icons/polygon-background.svg"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
@@ -28,7 +26,10 @@ function HomepageHeader({
 
             <div className="margin-vert--lg">
               <label style={{ fontWeight: "bold" }}>
-                1. Install the Cloudflare Pages plugin
+                1. Install the Cloudflare Pages plugin{" "}
+                <a href="https://developers.cloudflare.com/pages/platform/functions/plugins/community-plugins/">
+                  [Cloudflare docs]
+                </a>
               </label>
               <SyntaxHighlighter
                 language="shell"
@@ -41,8 +42,11 @@ function HomepageHeader({
             </div>
             <div>
               <label style={{ fontWeight: "bold" }}>
-                2. Add Proxyflare to your <code>onRequest</code> middleware
-                stack in <code>functions/[[path]].ts</code>
+                2. Add Proxyflare to your <code>onRequest</code>
+                stack in your Pages <code>functions/[[path]].ts</code> file{" "}
+                <a href="https://developers.cloudflare.com/pages/platform/functions">
+                  [Cloudflare docs]
+                </a>
               </label>
               <SyntaxHighlighter
                 showLineNumbers={true}
@@ -113,22 +117,7 @@ export default function Home(): JSX.Element {
       </div>
       <HomepageHeader onCodeLineClick={handleLineClick} />
       <main>
-        <BrowserOnly
-          fallback={
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 1000,
-              }}
-            >
-              <LoadingIcon />
-            </div>
-          }
-        >
-          {() => <HomepageFeatures selectedLineNumber={selectedLineNumber} />}
-        </BrowserOnly>
+        <HomepageFeatures selectedLineNumber={selectedLineNumber} />
       </main>
     </Layout>
   )

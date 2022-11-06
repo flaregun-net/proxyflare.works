@@ -31,14 +31,6 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          breadcrumbs: true,
-          // https://docusaurus.io/docs/docs-introduction#docs-only-mode
-          docItemComponent: require.resolve(
-            "./src/components/CustomDocItem/index.tsx",
-          ),
-          exclude: ["**/*.wip"],
-        },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
         },
@@ -47,22 +39,22 @@ const config = {
   ],
   plugins: [
     "docusaurus-plugin-sass",
-    [
-      path.resolve(
-        __dirname,
-        "./src/plugins/docusaurus-plugin-segment-analytics",
-      ),
-      {
-        prodKey: "RQXoHRpNcmBKllUDihjDjupGv4AHn5TB",
-        devKey: "FRKElp5cyMax6GAdM8OVyNMIFVppgEgp",
-        // boolean (defaults to false) on whether you want
-        // to include analytics.page() automatically
-        trackPage: true,
-        // number (defaults to 50); time to wait after a route update before it should
-        // track the page change, to implement this, make sure your `trackPage` property is set to `true`
-        // trackPageDelay: 50,
-      },
-    ],
+    // [
+    //   path.resolve(
+    //     __dirname,
+    //     "./src/plugins/docusaurus-plugin-segment-analytics",
+    //   ),
+    //   {
+    //     prodKey: "RQXoHRpNcmBKllUDihjDjupGv4AHn5TB",
+    //     devKey: "FRKElp5cyMax6GAdM8OVyNMIFVppgEgp",
+    //     // boolean (defaults to false) on whether you want
+    //     // to include analytics.page() automatically
+    //     trackPage: true,
+    //     // number (defaults to 50); time to wait after a route update before it should
+    //     // track the page change, to implement this, make sure your `trackPage` property is set to `true`
+    //     // trackPageDelay: 50,
+    //   },
+    // ],
     [
       path.resolve(__dirname, "./src/plugins/docusaurus-plugin-google-gtm"),
       {

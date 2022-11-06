@@ -8,6 +8,7 @@ import {
   wordPressRoute,
 } from "../../devConfig"
 import SyntaxHighlighter from "../components/SyntaxHighlighter"
+import { globalWindow } from "../utils/globalWindow"
 
 const removeWildcards = (pattern: string) =>
   new URL(`https://${pattern.replace(/\/?\*/, "")}`).href
@@ -63,7 +64,9 @@ export const onRequest = [
 
 export const useProxyflareRouteList = () => {
   const routes = useMemo(() => {
-    const { hostname } = window.location
+    const hostname = globalWindow
+      ? globalWindow.location.hostname
+      : "proxyflare.works"
 
     return [
       [

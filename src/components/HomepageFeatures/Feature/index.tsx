@@ -1,32 +1,27 @@
 import { RouteMetadata } from "@site/src/hooks/useProxyflareRouteList"
 import SourceCode from "@site/static/icons/source-code.svg"
-import React, { useState } from "react"
+import React, { FC } from "react"
 import useCollapse from "react-collapsed"
 
-type FeatureItem = {
-  title: string
+export const Feature: FC<{
   url: string
+  title: string
   docsUrl: string
-  routeName: string
-  snippet: JSX.Element
-  description: JSX.Element
-  styles: React.CSSProperties
-  metadata: RouteMetadata
   selected: boolean
-}
-
-export const Feature = ({
+  description: string
+  snippet: JSX.Element
+  metadata: RouteMetadata
+}> = ({
   title,
   url,
   docsUrl,
   snippet,
   description,
-  styles,
   selected,
   metadata,
-}: FeatureItem) => {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse()
-  const [showConfig, setShowConfig] = useState(false)
+  ...styles
+}) => {
+  const { getCollapseProps, getToggleProps } = useCollapse()
 
   const [, routeName, color, selectedColor] = metadata
 
