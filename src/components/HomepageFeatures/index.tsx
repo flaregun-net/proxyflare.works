@@ -1,139 +1,32 @@
-import clsx from "clsx"
-import React, { useMemo } from "react"
 import {
-  apiRoute,
-  docsRoute,
-  redirectRoute,
-  staticRoute,
-  websocketRoute,
-  wordPressRoute,
-} from "../../../devConfig"
-import SyntaxHighlighter from "../SyntaxHighlighter"
-import styles from "./styles.module.css"
+  RouteMetadata,
+  useProxyflareRouteList,
+} from "@site/src/hooks/useProxyflareRouteList"
+import React, { FC } from "react"
+import { Feature } from "./Feature"
+import styles from "./styles.module.scss"
 
-type FeatureItem = {
-  title: string
-  url: string
-  Svg?: React.ComponentType<React.ComponentProps<"svg">>
-  description: JSX.Element
-}
-
-const removeWildcards = (pattern: string) =>
-  new URL(`https://${pattern.replace(/\/?\*/, "")}`).href
-
-function Feature({ title, Svg, url, description }: FeatureItem) {
-  return (
-    <div className={clsx("col col--6")}>
-      {Svg && (
-        <div className="text--center">
-          <Svg className={styles.featureSvg} role="img" />
-        </div>
-      )}
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <a href={url}>{`Try it at ${url}`}</a>
-        <p>{description}</p>
-      </div>
-    </div>
-  )
-}
-export default function HomepageFeatures(): JSX.Element {
-  const featureList = useMemo(() => {
-    const { hostname } = window.location
-
-    return [
-      {
-        title: "Send traffic to another web service",
-        url: removeWildcards(apiRoute(hostname).from.pattern),
-        description: (
-          <SyntaxHighlighter
-            value={`const apiRoute = ${JSON.stringify(
-              apiRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-      {
-        title: "Send traffic over a websocket",
-        url: removeWildcards(websocketRoute(hostname).from.pattern),
-        description: (
-          <SyntaxHighlighter
-            value={`const websocketRoute = ${JSON.stringify(
-              websocketRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-      {
-        title: "Redirect traffic to another domain",
-        url: removeWildcards(redirectRoute(hostname).from.pattern),
-        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-        description: (
-          <SyntaxHighlighter
-            value={`const redirectRoute = ${JSON.stringify(
-              redirectRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-      {
-        title: "Mount your docs website",
-        url: removeWildcards(docsRoute(hostname).from.pattern),
-        description: (
-          <SyntaxHighlighter
-            value={`const docusaurusRoute = ${JSON.stringify(
-              docsRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-      {
-        title: "Mount your Wordpress blog",
-        url: removeWildcards(wordPressRoute(hostname).from.pattern),
-        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-        description: (
-          <SyntaxHighlighter
-            value={`const wordpressRoute = ${JSON.stringify(
-              wordPressRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-      {
-        title: "Serve static files such as robots.txt",
-        url: removeWildcards(staticRoute(hostname).from.pattern),
-        // Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-        description: (
-          <SyntaxHighlighter
-            value={`const staticRoute = ${JSON.stringify(
-              staticRoute(hostname),
-              null,
-              2,
-            )}`}
-          />
-        ),
-      },
-    ]
-  }, [])
+export const HomepageFeatures: FC<{
+  selectedLineNumber?: RouteMetadata[0]
+}> = ({ selectedLineNumber }) => {
+  const { routes } = useProxyflareRouteList()
 
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {featureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        {routes.map((featureListRow, i) => (
+          <div key={i} className="row">
+            {featureListRow.map((props, idx) => (
+              <div className="col col--6 padding-vert--md">
+                <Feature
+                  key={idx}
+                  selected={selectedLineNumber === props.metadata[0]}
+                  {...props}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   )

@@ -12,8 +12,8 @@ const appVersion =
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Proxyflare works",
-  tagline: "Try out the configurations below",
+  title: "Proxyflare",
+  tagline: "A reverse proxy for your Cloudflare domain",
   url: "https://proxyflare.works",
   baseUrl: "/",
   trailingSlash: true,
@@ -82,13 +82,13 @@ const config = {
       },
       colorMode: {
         defaultMode: "dark",
-        disableSwitch: false,
+        disableSwitch: true,
         respectPrefersColorScheme: true,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["http", "nginx", "markdown"],
+        additionalLanguages: ["markdown"],
       },
 
       navbar: {
