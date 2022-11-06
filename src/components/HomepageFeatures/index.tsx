@@ -4,7 +4,6 @@ import {
 } from "@site/src/hooks/useProxyflareRouteList"
 import React, { FC } from "react"
 import { Feature } from "./Feature"
-import styles from "./styles.module.scss"
 
 export const HomepageFeatures: FC<{
   selectedLineNumber?: RouteMetadata[0]
@@ -12,7 +11,7 @@ export const HomepageFeatures: FC<{
   const { routes } = useProxyflareRouteList()
 
   return (
-    <section className={styles.features}>
+    <section style={{ display: "flex", alignItems: "center" }}>
       <div className="container">
         {routes.map((featureListRow, i) => (
           <div key={i} className="row">

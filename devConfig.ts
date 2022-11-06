@@ -13,6 +13,7 @@ export const docsRoute = (host: string) => ({
     },
   },
 })
+
 export const wordPressRoute = (host: string) => ({
   from: { pattern: `${host}/blog/*` },
   to: {
@@ -22,6 +23,7 @@ export const wordPressRoute = (host: string) => ({
     },
   },
 })
+
 export const apiRoute = (host: string) => ({
   from: { pattern: `${host}/api/*` },
   to: { url: "https://proxyflare-api-tutorial.networkchimp.workers.dev" },

@@ -33,7 +33,7 @@ export const Feature: FC<{
         borderRadius: 8,
         padding: "1rem",
         border: `1px solid ${selected ? color : "#4a4658"}`,
-        backgroundColor: selected ? selectedColor : undefined,
+        backgroundColor: selected ? selectedColor : "rgba(20,28,34,.5)",
         ...styles,
       }}
     >

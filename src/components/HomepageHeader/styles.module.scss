@@ -1,0 +1,17 @@
+.heroBanner {
+  background-color: var(--ifm-color-none);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 120px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}

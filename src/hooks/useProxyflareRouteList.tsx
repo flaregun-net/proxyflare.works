@@ -14,16 +14,16 @@ const removeWildcards = (pattern: string) =>
   new URL(`https://${pattern.replace(/\/?\*/, "")}`).href
 
 const getColors = (opacity) => [
-  `rgba(26, 148, 208, ${opacity})`,
-  `rgba(83, 198, 56, ${opacity})`,
-  `rgba(252, 213, 0, ${opacity})`,
-  `rgba(239, 130, 40, ${opacity})`,
-  `rgba(222, 68, 57, ${opacity})`,
-  `rgba(126, 67, 177, ${opacity})`,
+  `rgba(26,148,208,${opacity})`,
+  `rgba(83,198,56,${opacity})`,
+  `rgba(252,213,0,${opacity})`,
+  `rgba(239,130,40,${opacity})`,
+  `rgba(222,68,57,${opacity})`,
+  `rgba(126,67,177,${opacity})`,
 ]
 
-const colors = getColors(0.5)
-const selectedColors = getColors(0.2)
+const colors = getColors(".5")
+const selectedColors = getColors(".2")
 
 type LineNumber = number
 type RouteName = string
