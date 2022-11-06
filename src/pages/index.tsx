@@ -108,8 +108,8 @@ export default function Home(): JSX.Element {
           position: "absolute",
           top: 0,
           right: 0,
-          height: 560,
           zIndex: 0,
+          height: 560,
           opacity: 0.8,
         }}
       >

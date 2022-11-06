@@ -1,4 +1,3 @@
-import { devConfig } from "@flaregun-net/proxyflare-core"
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
 
 // This function runs on every request to proxyflare.works and proxyflare.xyz
@@ -7,7 +6,7 @@ import proxyflare from "@flaregun-net/proxyflare-for-pages"
 export const onRequest: PagesFunction<{ HOSTNAME: string }>[] = [
   (context) => {
     return context.env.HOSTNAME === "proxyflare.works"
-      ? proxyflare({ config: devConfig(context.env.HOSTNAME) })(context)
+      ? proxyflare({ config: {} })(context)
       : context.next()
   },
 ]
