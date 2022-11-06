@@ -2684,26 +2684,26 @@
     url-loader "^4.1.1"
     webpack "^5.73.0"
 
-"@flaregun-net/app-utils@^0.0.208":
-  version "0.0.208"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.208/e18b5a1ddebed451af309c932c57ad01b4af7add#e18b5a1ddebed451af309c932c57ad01b4af7add"
-  integrity sha512-96zS/BLRNiyAPqnGnK6IzWMXKhfwBXN7fYYPMUkeuNABx0XJWisfyLoHyZR/IiUXSyE229k5WAt0tSZkOxlnjQ==
+"@flaregun-net/app-utils@^0.0.209":
+  version "0.0.209"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.209/e860e61a30285de06e76a3dc5ec59b4991d0724e#e860e61a30285de06e76a3dc5ec59b4991d0724e"
+  integrity sha512-LVP8xKRCmaQ7Q7s24k4vR0xuEODsH3N4Hj31T0vFEo2alrgoM/0lteFQVQ/MAbfW+4blvRaa7Qt+qpqP5oLyEg==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@0.0.208":
-  version "0.0.208"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.208/b0241be639707ae3d2099f2be742c7294d164ab0#b0241be639707ae3d2099f2be742c7294d164ab0"
-  integrity sha512-pFrQ1NxGAjQ3ux6oyik+mc9QiuE+fferGc4KT56XLRiicOWMeRYcDJVjrMX2BYn55fNOOAOqDbeNcdK3CnxLzg==
+"@flaregun-net/proxyflare-core@0.0.209":
+  version "0.0.209"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.209/e815bfdf1d1bb5b88ad95eb47c907e19a4d12fa0#e815bfdf1d1bb5b88ad95eb47c907e19a4d12fa0"
+  integrity sha512-wexYd83gzT+ociriMC2rNPVNwKRR6SZpCl7G5hspV5rB3d6uYttYvhw8jIHSiWBi3bILs6TPcI85XeNQavyk/A==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.208"
+    "@flaregun-net/app-utils" "^0.0.209"
     joi "^17.6.0"
     zod "^3.17.3"
 
-"@flaregun-net/proxyflare-for-pages@0.0.208":
-  version "0.0.208"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.208/e6f4ffbd06556a84000eb79e89b01519b9206748#e6f4ffbd06556a84000eb79e89b01519b9206748"
-  integrity sha512-2yf7ZjaUot4P/GJs5Xcw4HCFlmtXQyl4cdkwL+6UFB9PeeHCA8G03FbVvqaEEhK5cr7cl7+CZVgeX2rEQEV6mg==
+"@flaregun-net/proxyflare-for-pages@0.0.209":
+  version "0.0.209"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.209/8d04645c9abbbd4820fcfce63e65408cbee20a0e#8d04645c9abbbd4820fcfce63e65408cbee20a0e"
+  integrity sha512-COnALMt9yHnFrhSlv0RqEuTL9KRziEd2tSG9/lymBc97eL+7OdPwF7ct1kBETLJjXNBayrhmMYN9+1RctV1/LQ==
 
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
