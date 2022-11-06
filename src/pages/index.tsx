@@ -117,9 +117,6 @@ export default function Home(): JSX.Element {
       </div>
 
       <div className="alert alert--danger" role="alert">
-        <button aria-label="Close" className="clean-btn close" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
         If you stumbled on this site, it's not quite ready yet. Come back in a
         couple days to check for updates.
       </div>
