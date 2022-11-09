@@ -8,6 +8,7 @@ import {
   websocketRoute,
   wordPressRoute,
 } from "../../devConfig"
+import { RouteDiagram } from "../components/HomepageFeatures/RouteDiagram"
 import SyntaxHighlighter from "../components/SyntaxHighlighter"
 
 const removeWildcards = (pattern: string) =>
@@ -75,6 +76,9 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(apiRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-service",
+          exampleRouteDiagram: (
+            <RouteDiagram from={`${hostname}/api`} to="my-api.com" />
+          ),
           description:
             "Proxyflare can send incoming traffic on your domain to other places on the internet.",
           metadata: routeMetadata[0],
@@ -94,6 +98,9 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(websocketRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-service",
+          exampleRouteDiagram: (
+            <RouteDiagram from={`${hostname}/ws`} to="my-api.com/ws" />
+          ),
           description:
             "Proxyflare is compatible with HTTP and Websocket protocols.",
           metadata: routeMetadata[1],
@@ -115,6 +122,9 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(wordPressRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-website",
+          exampleRouteDiagram: (
+            <RouteDiagram from={`${hostname}/blog`} to="my-wordpress.com" />
+          ),
           description:
             "Proxyflare can proxy content rich websites with a little additional setup.",
           metadata: routeMetadata[2],
@@ -134,6 +144,9 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(docsRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-website",
+          exampleRouteDiagram: (
+            <RouteDiagram from={`${hostname}/docs`} to="my-docs.com" />
+          ),
           description:
             "Proxyflare can proxy content rich websites with a little additional setup.",
           metadata: routeMetadata[3],
@@ -155,6 +168,12 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(redirectRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/redirect-traffic",
+          exampleRouteDiagram: (
+            <RouteDiagram
+              from={`${hostname}/blog/old-slug`}
+              to={`${hostname}/blog/new-slug`}
+            />
+          ),
           description:
             "Proxyflare can redirect traffic on absolute or wildcard pathnames on your domain to other places on the internet.",
           metadata: routeMetadata[4],
@@ -174,6 +193,9 @@ export const useProxyflareRouteList = () => {
           url: removeWildcards(staticRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/serve-text-files",
+          exampleRouteDiagram: (
+            <RouteDiagram from={`${hostname}/robots.txt`} to="my-api.com" />
+          ),
           description:
             "Proxyflare can serve a text file on any URL on your domain.",
           metadata: routeMetadata[5],

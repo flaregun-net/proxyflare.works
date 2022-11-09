@@ -37,6 +37,18 @@ export default function Home() {
 
       <HomepageHeader onCodeLineClick={handleLineClick} />
       <main>
+        <div
+          className="container"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div className="row">
+            <h2>Some things you can do with Proxyflare</h2>
+          </div>
+        </div>
         <HomepageFeatures selectedLineNumber={selectedLineNumber} />
       </main>
     </Layout>

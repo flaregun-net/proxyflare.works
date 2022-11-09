@@ -15,11 +15,11 @@ export const HomepageFeatures: FC<{
       <div className="container">
         {routes.map((featureListRow, i) => (
           <div key={i} className="row">
-            {featureListRow.map((props, idx) => (
+            {featureListRow.map((featureProps, idx) => (
               <div key={idx} className="col col--6 padding-vert--md">
                 <Feature
-                  selected={selectedLineNumber === props.metadata[0]}
-                  {...props}
+                  {...featureProps}
+                  selected={selectedLineNumber === featureProps.metadata[0]}
                 />
               </div>
             ))}

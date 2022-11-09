@@ -18,8 +18,10 @@ export function HomepageHeader({
       <div className="container">
         <div className="row">
           <div className="col col--8 col--offset-2">
-            <h1 className="hero__title">{siteConfig.tagline}</h1>
-            <h2>Move traffic around your domain with ease</h2>
+            <h1 className="hero__title margin-bottom--lg">
+              {siteConfig.tagline}
+            </h1>
+            <h2>Proxyflare makes it easy to move traffic around your domain</h2>
 
             <div className="margin-vert--lg">
               <label style={{ fontWeight: "bold" }}>

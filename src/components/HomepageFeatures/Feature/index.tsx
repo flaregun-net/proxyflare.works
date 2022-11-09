@@ -9,6 +9,7 @@ export const Feature: FC<{
   docsUrl: string
   selected: boolean
   description: string
+  exampleRouteDiagram: JSX.Element
   snippet: JSX.Element
   metadata: RouteMetadata
 }> = ({
@@ -17,6 +18,7 @@ export const Feature: FC<{
   docsUrl,
   snippet,
   description,
+  exampleRouteDiagram,
   selected,
   metadata,
   ...styles
@@ -39,7 +41,9 @@ export const Feature: FC<{
     >
       <div className="row margin-bottom--md">
         <div className="col col--12">
-          <h3 className="margin-bottom--md">{title}</h3>
+          <h3 style={{ marginBottom: 8 }}>{title}</h3>
+
+          <div className="margin-bottom--md">{exampleRouteDiagram}</div>
 
           <button
             style={{ display: "flex", alignItems: "center", padding: 0 }}
@@ -47,7 +51,7 @@ export const Feature: FC<{
             {...getToggleProps()}
           >
             <SourceCode width={16} height={16} style={{ marginRight: 8 }} />
-            View {routeName}
+            View {routeName} example
           </button>
         </div>
       </div>
