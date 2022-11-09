@@ -39,8 +39,9 @@ export function HomepageHeader({
             </div>
             <div>
               <label style={{ fontWeight: "bold" }}>
-                2. Add Proxyflare to your <code>onRequest</code>
-                stack in your Pages <code>functions/[[path]].ts</code> file{" "}
+                2. Add Proxyflare to the <code>onRequest</code>
+                stack in <code>functions/[[path]].ts</code> in your Pages
+                project{" "}
                 <a href="https://developers.cloudflare.com/pages/platform/functions">
                   [Cloudflare docs]
                 </a>

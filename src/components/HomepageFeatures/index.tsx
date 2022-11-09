@@ -16,9 +16,8 @@ export const HomepageFeatures: FC<{
         {routes.map((featureListRow, i) => (
           <div key={i} className="row">
             {featureListRow.map((props, idx) => (
-              <div className="col col--6 padding-vert--md">
+              <div key={idx} className="col col--6 padding-vert--md">
                 <Feature
-                  key={idx}
                   selected={selectedLineNumber === props.metadata[0]}
                   {...props}
                 />

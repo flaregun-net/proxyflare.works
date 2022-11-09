@@ -26,20 +26,8 @@ export default function Home() {
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <div
-        style={{
-          backgroundColor:
-            "linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(20,28,34,1) 90%)",
-          transform: "scaleY(-1)",
-          position: "absolute",
-          top: 0,
-          right: 0,
-          zIndex: 0,
-          height: 560,
-          opacity: 0.2,
-        }}
-      >
-        <Polygon style={{ zIndex: -1 }} />
+      <div className="graph-background">
+        <Polygon />
       </div>
 
       <div className="alert alert--danger" role="alert">
