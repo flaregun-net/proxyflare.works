@@ -25,6 +25,7 @@ const config = {
   staticDirectories: ["static", "public"],
   customFields: {
     appVersion,
+    HOSTNAME: process.env.HOSTNAME,
   },
   presets: [
     [

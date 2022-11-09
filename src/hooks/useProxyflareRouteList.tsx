@@ -1,3 +1,4 @@
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import React, { useMemo } from "react"
 import {
   apiRoute,
@@ -63,10 +64,15 @@ export const onRequest = [
 `
 
 export const useProxyflareRouteList = () => {
+  const { siteConfig } = useDocusaurusContext()
   const routes = useMemo(() => {
     const hostname = globalWindow
       ? globalWindow.location.hostname
       : "proxyflare.works"
+    console.log(
+      "siteConfig.customFields.HOSTNAME",
+      siteConfig.customFields.HOSTNAME,
+    )
 
     return [
       [
