@@ -20,8 +20,8 @@
   "dependencies": {
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
-    "@flaregun-net/proxyflare-core": "0.0.213",
-    "@flaregun-net/proxyflare-for-pages": "0.0.213",
+    "@flaregun-net/proxyflare-core": "0.0.214",
+    "@flaregun-net/proxyflare-for-pages": "0.0.214",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.2",
     "prism-react-renderer": "^1.2.1",
