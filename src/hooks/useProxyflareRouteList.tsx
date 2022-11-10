@@ -77,7 +77,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-service",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/api`} to="elsewhere.com" />
+            <RouteDiagram from={`${hostname}/api`} to={`${hostname}:5432`} />
           ),
           description:
             "Proxyflare can send incoming traffic on your domain to other places on the internet.",
