@@ -77,7 +77,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-service",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/api`} to="my-api.com" />
+            <RouteDiagram from={`${hostname}/api`} to="elsewhere.com" />
           ),
           description:
             "Proxyflare can send incoming traffic on your domain to other places on the internet.",
@@ -99,7 +99,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-service",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/ws`} to="my-api.com/ws" />
+            <RouteDiagram from={`${hostname}/ws`} to="elsewhere.com/ws" />
           ),
           description:
             "Proxyflare is compatible with HTTP and Websocket protocols.",
@@ -123,7 +123,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-website",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/blog`} to="my-wordpress.com" />
+            <RouteDiagram from={`${hostname}/blog`} to="wordpress-site.com" />
           ),
           description:
             "Proxyflare can proxy content rich websites with a little additional setup.",
@@ -145,7 +145,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxy-website",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/docs`} to="my-docs.com" />
+            <RouteDiagram from={`${hostname}/docs`} to="docs-site.com" />
           ),
           description:
             "Proxyflare can proxy content rich websites with a little additional setup.",
@@ -194,7 +194,10 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/configure/serve-text-files",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/robots.txt`} to="my-api.com" />
+            <RouteDiagram
+              from={`${hostname}/robots.txt`}
+              to="X-Robots-Tag: noindex"
+            />
           ),
           description:
             "Proxyflare can serve a text file on any URL on your domain.",
