@@ -2684,26 +2684,26 @@
     url-loader "^4.1.1"
     webpack "^5.73.0"
 
-"@flaregun-net/app-utils@^0.0.210":
-  version "0.0.210"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.210/b5102fc8661c76b15d3e45fe3a7e4abd2cf81b50#b5102fc8661c76b15d3e45fe3a7e4abd2cf81b50"
-  integrity sha512-93DJUQsdlloyKkty0cuNIxF84zGVu0Fjm8ey4Q8GeGxdfOTZ3eSZ/NOyIyttpwDq/JQnGOVgBAGgRkpf0HGvsQ==
+"@flaregun-net/app-utils@^0.0.214":
+  version "0.0.214"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.214/1d7738c4c3714bbd1c8faee50f5322aebabf555b#1d7738c4c3714bbd1c8faee50f5322aebabf555b"
+  integrity sha512-/wFPhh6G6krEtxfDj2lWgyOk3Mh6BhgaM1n6sOw+Tx7/FWqt12+VTA5M9q+W+oIGptvYqaKA8UiwD/mN2xzN3Q==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@0.0.210":
-  version "0.0.210"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.210/01e8835106b696acebd3052bcdb9d20bebec653b#01e8835106b696acebd3052bcdb9d20bebec653b"
-  integrity sha512-5kxeLvOtueRWAMiEG01WmtYp1GfEDqFKJ+U7mPOJO1wTbBFy7aCt2uq/HtcsbRmahBsnYfByh52j9xYEkz7UuA==
+"@flaregun-net/proxyflare-core@0.0.214":
+  version "0.0.214"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.214/e65d246fe24d6cee1fa7f5f2212f89e7dc1c7c2b#e65d246fe24d6cee1fa7f5f2212f89e7dc1c7c2b"
+  integrity sha512-3LxDyz+UV5C65XumciAjfXGMyKhKugyoNfc00uMnbnzS5VaCe6sDoSVzgLRcIeTXrps5DBZcpbZA5wjV/TOIqg==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.210"
+    "@flaregun-net/app-utils" "^0.0.214"
     joi "^17.6.0"
     zod "^3.17.3"
 
-"@flaregun-net/proxyflare-for-pages@0.0.210":
-  version "0.0.210"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.210/27bcdcd02e677803186a7c9f65e31cd70a721501#27bcdcd02e677803186a7c9f65e31cd70a721501"
-  integrity sha512-t3lVySmNuF3NjtQ6hGb/BLT6nUQorD2EHlj3P0EiRBT3/m0zXgkIn0YPGOfLgqnZ+FkqoC26HXSkccTcQ+ntlQ==
+"@flaregun-net/proxyflare-for-pages@0.0.214":
+  version "0.0.214"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-for-pages/0.0.214/8e2728d4ca20abbfa86e38d7eef29d832f93a52f#8e2728d4ca20abbfa86e38d7eef29d832f93a52f"
+  integrity sha512-W8WEsV16+nX4SFF3uCNoUncwWg1hmhX09+qQlih+o01QcyyEyYhhvJd8d1lWQlvtr1mTeBI4xcKj4Fya5k1sZw==
 
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
@@ -7832,14 +7832,7 @@ json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
-json5@^2.1.2:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
-  integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
-  dependencies:
-    minimist "^1.2.5"
-
-json5@^2.2.1:
+json5@^2.1.2, json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
@@ -7962,9 +7955,9 @@ loader-runner@^4.2.0:
   integrity sha512-92+huvxMvYlMzMt0iIOukcwYBFpkYJdpl2xsZ7LrlayO7E8SOv+JJUEK17B/dJIHAOLMfh2dZZ/Y18WgmGtYNw==
 
 loader-utils@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.2.tgz#d6e3b4fb81870721ae4e0868ab11dd638368c129"
-  integrity sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.4.tgz#8b5cb38b5c34a9a018ee1fc0e6a066d1dfcc528c"
+  integrity sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==
   dependencies:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
