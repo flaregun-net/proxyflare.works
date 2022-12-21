@@ -83,15 +83,27 @@ const config = {
         },
         items: [
           {
-            to: "https://flaregun.net/docs/latest/proxyflare/plugin/index",
+            to: "https://flaregun.net/docs/latest/proxyflare/plugin/index/",
             label: "Docs",
             position: "left",
+          },
+          {
+            href: "https://github.com/flaregun-net",
+            position: "right",
+            className: "header-github-link",
+            "aria-label": "Flaregun on Github",
           },
           {
             href: "https://discord.gg/YcDwujEH",
             position: "right",
             className: "header-discord-link",
             "aria-label": "Flaregun on Discord",
+          },
+          {
+            href: "https://twitter.com/flaregun_net",
+            position: "right",
+            className: "header-twitter-link",
+            "aria-label": "Flaregun on Twitter",
           },
         ],
       },

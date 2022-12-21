@@ -32,31 +32,32 @@ type Color = string
 
 export type RouteMetadata = [LineNumber, RouteName, Color, Color]
 
-const startingRouteLine = 4
+const startingRouteLine = 7
 const routeMetadata: RouteMetadata[] = [
   [startingRouteLine, "apiRoute", colors[0], selectedColors[0]],
   [startingRouteLine + 1, "websocketRoute", colors[1], selectedColors[1]],
   [startingRouteLine + 2, "wordpressRoute", colors[2], selectedColors[2]],
   [startingRouteLine + 3, "docusaurusRoute", colors[3], selectedColors[3]],
   [startingRouteLine + 4, "redirectRoute", colors[4], selectedColors[4]],
-  [startingRouteLine + 5, "textRoute", colors[5], selectedColors[5]],
+  [startingRouteLine + 5, "staticTextRoute", colors[5], selectedColors[5]],
 ]
 
 export const scaffold = `
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
 
-const routes: Route[] = [
-  ${routeMetadata[0][1]},
-  ${routeMetadata[1][1]},
-  ${routeMetadata[2][1]},
-  ${routeMetadata[3][1]},
-  ${routeMetadata[4][1]},
-  ${routeMetadata[5][1]},
-]
-
 export const onRequest: PagesFunction[] = [
-  (context) => proxyflare({ config: { routes } })(context)
-  // other Pages plugins and middleware
+  (context) => proxyflare({
+    config: {
+     routes: [
+       ${routeMetadata[0][1]},
+       ${routeMetadata[1][1]},
+       ${routeMetadata[2][1]},
+       ${routeMetadata[3][1]},
+       ${routeMetadata[4][1]},
+       ${routeMetadata[5][1]},
+     ]
+    }
+  })(context)
 ]
 `
 

@@ -33,7 +33,7 @@ const CustomFooter = () => (
       </div>
       <div className={styles["socialBrands"]}>
         <Link
-          href={"https://twitter.com/flaregun-net"}
+          href={"https://twitter.com/flaregun_net"}
           rel="noopener noreferrer"
           aria-label={"Twitter"}
         >
