@@ -40,33 +40,6 @@ const CustomFooter = () => (
           <TwitterIcon />
         </Link>
       </div>
-      {/* <div className={styles["socialBrands"]}>
-        <Link
-          href={"https://discord.gg/YcDwujEH"}
-          rel="noopener noreferrer"
-          aria-label={"Discord"}
-        >
-          <DiscordIcon />
-        </Link>
-      </div> */}
-      {/* <div className={styles["socialBrands"]}>
-        <Link
-          href={"https://www.youtube.com/channel/UCZo1ciR8pZvdD3Wxp9aSNhQ"}
-          rel="noopener noreferrer"
-          aria-label={"Youtube"}
-        >
-          <YoutubeIcon />
-        </Link>
-      </div>
-      <div className={styles["socialBrands"]}>
-        <Link
-          href={"https://www.linkedin.com/company/hasura"}
-          rel="noopener noreferrer"
-          aria-label={"Linkedin"}
-        >
-          <LinkedInIcon />
-        </Link>
-      </div> */}
     </div>
   </footer>
 )

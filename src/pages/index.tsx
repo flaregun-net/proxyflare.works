@@ -30,11 +30,6 @@ export default function Home() {
         <Polygon />
       </div>
 
-      <div className="alert alert--danger" role="alert">
-        If you stumbled on this site, it's not quite ready yet. Come back in a
-        couple days to check for updates.
-      </div>
-
       <HomepageHeader onCodeLineClick={handleLineClick} />
       <main>
         <div className="container">
@@ -48,7 +43,7 @@ export default function Home() {
           <div className="row">
             <div className="col col--12">
               <h3 style={{ textAlign: "center" }}>
-                See what Proxyflare can do for you in these examples
+                See what Proxyflare can do for you
               </h3>
             </div>
           </div>
