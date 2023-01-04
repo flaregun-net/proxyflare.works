@@ -284,3 +284,15 @@
 
   }
 }
+
+.underline {
+  padding-left: 0.5ch;
+  text-decoration-line: underline;
+  text-underline-offset: 6px;
+  text-decoration-style: dashed;
+  text-decoration-color: #de8747;
+}
+
+.red-underline {
+  text-decoration-color: var(--ifm-color-info-light);
+}
