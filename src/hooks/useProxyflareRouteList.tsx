@@ -73,7 +73,7 @@ export const useProxyflareRouteList = () => {
           title: "Send traffic to another web service",
           url: removeWildcards(apiRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxying-services",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-services",
           exampleRouteDiagram: (
             <RouteDiagram from={`${hostname}/api`} to={`${hostname}:5432`} />
           ),
@@ -95,7 +95,7 @@ export const useProxyflareRouteList = () => {
           title: "Send traffic over a websocket connection",
           url: removeWildcards(websocketRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxying-services",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-services",
           exampleRouteDiagram: (
             <RouteDiagram from={`${hostname}/ws`} to="elsewhere.com/ws" />
           ),
@@ -119,7 +119,7 @@ export const useProxyflareRouteList = () => {
           title: "Mount your Wordpress blog",
           url: removeWildcards(wordPressRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxying-websites",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-websites",
           exampleRouteDiagram: (
             <RouteDiagram from={`${hostname}/blog`} to="wordpress-site.com" />
           ),
@@ -141,7 +141,7 @@ export const useProxyflareRouteList = () => {
           title: "Mount your documentation website",
           url: removeWildcards(docsRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/proxying-websites",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-websites",
           exampleRouteDiagram: (
             <RouteDiagram from={`${hostname}/docs`} to="docs-site.com" />
           ),
@@ -165,7 +165,7 @@ export const useProxyflareRouteList = () => {
           title: "Redirect traffic to another domain",
           url: removeWildcards(redirectRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/redirecting-traffic",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
           exampleRouteDiagram: (
             <RouteDiagram
               from={`${hostname}/blog/old-slug`}
@@ -190,7 +190,7 @@ export const useProxyflareRouteList = () => {
           title: "Serve static files such as robots.txt",
           url: removeWildcards(staticRoute(hostname).from.pattern),
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/plugin/configure/serving-static-responses",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/serving-static-responses",
           exampleRouteDiagram: (
             <RouteDiagram
               from={`${hostname}/robots.txt`}
