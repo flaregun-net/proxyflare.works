@@ -1,6 +1,9 @@
 import React from "react"
 import { Prism } from "react-syntax-highlighter"
 import prismStyle from "react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark"
+import styles from "./styles.module.scss"
+
+const Pre = ({ children }) => <pre className={styles.pre}>{children}</pre>
 
 export default ({
   value,
@@ -11,8 +14,8 @@ export default ({
   <Prism
     style={prismStyle}
     language={language}
-    customStyle={{ fontSize: 12, zIndex: 500, ...other.customStyle }}
     wrapLongLines={wrapLongLines}
+    PreTag={Pre}
     {...other}
   >
     {value.trim()}

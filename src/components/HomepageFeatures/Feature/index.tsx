@@ -1,7 +1,6 @@
 import { RouteMetadata } from "@site/src/hooks/useProxyflareRouteList"
-import SourceCode from "@site/static/icons/source-code.svg"
 import React, { FC } from "react"
-import useCollapse from "react-collapsed"
+import { ExpandableCode } from "../ExpandableCode"
 
 export const Feature: FC<{
   url: string
@@ -9,6 +8,7 @@ export const Feature: FC<{
   docsUrl: string
   selected: boolean
   description: string
+  explanation: string
   exampleRouteDiagram: JSX.Element
   snippet: JSX.Element
   metadata: RouteMetadata
@@ -18,13 +18,12 @@ export const Feature: FC<{
   docsUrl,
   snippet,
   description,
+  explanation,
   exampleRouteDiagram,
   selected,
   metadata,
   ...styles
 }) => {
-  const { getCollapseProps, getToggleProps } = useCollapse()
-
   const [, routeName, color, selectedColor] = metadata
 
   return (
@@ -41,18 +40,9 @@ export const Feature: FC<{
     >
       <div className="row margin-bottom--md">
         <div className="col col--12">
-          <h3 style={{ marginBottom: 8 }}>{title}</h3>
+          <h3 style={{ marginBottom: 2 }}>{title}</h3>
 
-          <div className="margin-bottom--md">{exampleRouteDiagram}</div>
-
-          <button
-            style={{ display: "flex", alignItems: "center", padding: 0 }}
-            className="button button--outline button--link"
-            {...getToggleProps()}
-          >
-            <SourceCode width={16} height={16} style={{ marginRight: 8 }} />
-            View {routeName} example
-          </button>
+          <div>{exampleRouteDiagram}</div>
         </div>
       </div>
 
@@ -62,8 +52,12 @@ export const Feature: FC<{
         </div>
       </div>
 
-      <div className="row" {...getCollapseProps()}>
-        <div className="col col--12">{snippet}</div>
+      <ExpandableCode snippet={snippet} />
+
+      <div className="row">
+        <div className="col col--12">
+          <p style={{ maxWidth: 700 }}>{explanation}</p>
+        </div>
       </div>
 
       <div className="row">

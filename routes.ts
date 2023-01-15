@@ -42,4 +42,9 @@ export const redirectRoute = (host: string) => ({
 export const staticRoute = (host: string) => ({
   from: { pattern: `${host}/robots.txt` },
   to: { text: "X-Robots-Tag: noindex" },
+  headers: {
+    response: {
+      "content-type": "text/plain",
+    },
+  },
 })

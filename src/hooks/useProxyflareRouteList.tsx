@@ -79,6 +79,12 @@ export const useProxyflareRouteList = () => {
           ),
           description:
             "Proxyflare can send incoming traffic on your domain to other places on the internet.",
+          explanation: (
+            <>
+              With the above code, traffic on subpaths of <code>api</code> is
+              sent to a remote service.
+            </>
+          ),
           metadata: routeMetadata[0],
           snippet: (
             <SyntaxHighlighter
@@ -101,6 +107,12 @@ export const useProxyflareRouteList = () => {
           ),
           description:
             "Proxyflare is compatible with HTTP and Websocket protocols.",
+          explanation: (
+            <>
+              Proxyflare upgrades to <code>wss:</code> protocol if provided. Try
+              out our websocket playground by clicking the button below.
+            </>
+          ),
           metadata: routeMetadata[1],
           snippet: (
             <SyntaxHighlighter
@@ -116,7 +128,7 @@ export const useProxyflareRouteList = () => {
       ],
       [
         {
-          title: "Mount your Wordpress blog",
+          title: "Mount your Wordpress-powered website",
           url: removeWildcards(wordPressRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-websites",
@@ -124,7 +136,9 @@ export const useProxyflareRouteList = () => {
             <RouteDiagram from={`${hostname}/blog`} to="wordpress-site.com" />
           ),
           description:
-            "Proxyflare can proxy content rich websites with a little additional setup.",
+            "Mount your CMS-powered websites on a subpath of your apex domain.",
+          explanation:
+            "Press Try it and notice how Proxyflare handles routing and rewrites links on the Wordpress website.",
           metadata: routeMetadata[2],
           snippet: (
             <SyntaxHighlighter
@@ -138,15 +152,17 @@ export const useProxyflareRouteList = () => {
           ),
         },
         {
-          title: "Mount your documentation website",
+          title: "Mount your frontend Javascript framework-powered website",
           url: removeWildcards(docsRoute(hostname).from.pattern),
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-websites",
           exampleRouteDiagram: (
-            <RouteDiagram from={`${hostname}/docs`} to="docs-site.com" />
+            <RouteDiagram from={`${hostname}/docs`} to="react-docs-site.com" />
           ),
           description:
-            "Proxyflare can proxy content rich websites with a little additional setup.",
+            "Mount your single page app on a subpath of your apex domain.",
+          explanation:
+            "Proxyflare works with any website — whether its powered by a client side bundle or rendered server side.",
           metadata: routeMetadata[3],
           snippet: (
             <SyntaxHighlighter
@@ -174,6 +190,12 @@ export const useProxyflareRouteList = () => {
           ),
           description:
             "Proxyflare can redirect traffic from absolute or wildcard pathnames on your domain to other places on the internet.",
+          explanation: (
+            <>
+              Provide a <code>statusCode</code> to redirect traffic to a page or
+              part of your domain with the desired response code.
+            </>
+          ),
           metadata: routeMetadata[4],
           snippet: (
             <SyntaxHighlighter
@@ -200,6 +222,12 @@ export const useProxyflareRouteList = () => {
           description:
             "Proxyflare can serve a text file on any URL on your domain.",
           metadata: routeMetadata[5],
+          explanation: (
+            <>
+              Serve HTML, JSON, and metadata files by providing the file text
+              and <code>content-type</code> response header.
+            </>
+          ),
           snippet: (
             <SyntaxHighlighter
               customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
