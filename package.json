@@ -3,7 +3,7 @@
   "version": "0.0.214",
   "private": true,
   "scripts": {
-    "postinstall": "mv .npmrc .npmrcc && npm i @flaregun-net/proxyflare-for-pages --dry-run && mv .npmrcc .npmrc",
+    "postinstall": "./postinstall.sh",
     "docusaurus": "docusaurus",
     "dev": "npm start",
     "start": "docusaurus start",
