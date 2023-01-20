@@ -23,8 +23,8 @@ const getColors = (opacity) => [
   `rgba(126,67,177,${opacity})`,
 ]
 
-const colors = getColors(".5")
-const selectedColors = getColors(".2")
+const colors = getColors(".2")
+const selectedColors = getColors(".1")
 
 type LineNumber = number
 type RouteName = string

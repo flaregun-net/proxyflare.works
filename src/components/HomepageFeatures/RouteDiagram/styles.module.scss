@@ -1,6 +1,7 @@
 .wrapper {
   font-size: 14;
   font-weight: 600;
+  margin-left: 1rem;
 
   >div {
     display: inline-block;
@@ -16,14 +17,20 @@
 }
 
 .hostname {
-  color: var(--ifm-color-gray-600)
+  font-style: italic;
 }
 
 .pathname {
-  color: var(--ifm-color-gray-200)
+  color: orange
 }
 
 .arrow {
   position: relative;
   top: -2px;
+}
+
+.droparrow {
+  position: relative;
+  top: -2px;
+  margin-right: 4px;
 }

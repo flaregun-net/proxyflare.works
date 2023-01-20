@@ -15,6 +15,7 @@ export const RouteDiagram: FC<{
 
   return (
     <div className={styles.wrapper}>
+      <span className={styles.droparrow}>⮑</span>
       <div>
         <span className={styles.hostname}>{fromHostname}</span>
         <span className={styles.pathname}>{fromPathname}</span>
