@@ -88,7 +88,6 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[0],
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const apiRoute = ${JSON.stringify(
                 apiRoute(hostname),
                 null,
@@ -116,7 +115,6 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[1],
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const websocketRoute = ${JSON.stringify(
                 websocketRoute(hostname),
                 null,
@@ -142,7 +140,6 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[2],
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const wordpressRoute = ${JSON.stringify(
                 wordPressRoute(hostname),
                 null,
@@ -166,7 +163,6 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[3],
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const docusaurusRoute = ${JSON.stringify(
                 docsRoute(hostname),
                 null,
@@ -199,7 +195,6 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[4],
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const redirectRoute = ${JSON.stringify(
                 redirectRoute(hostname),
                 null,
@@ -230,7 +225,6 @@ export const useProxyflareRouteList = () => {
           ),
           snippet: (
             <SyntaxHighlighter
-              customStyle={{ backgroundColor: "rgba(20,28,34,0.5)" }}
               value={`const staticRoute = ${JSON.stringify(
                 staticRoute(hostname),
                 null,

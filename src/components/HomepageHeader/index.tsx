@@ -43,7 +43,7 @@ export function HomepageHeader({
                 <SyntaxHighlighter
                   language="shell"
                   customStyle={{
-                    background: "rgba(20,28,34,0.5)",
+                    background: "#141C22",
                     border: "1px solid #4a4658",
                   }}
                   value="> npm install @flaregun-net/proxyflare-for-pages"
