@@ -37,4 +37,10 @@
   padding-right: 10px;
   font-size: 12px;
   line-height: 25px;
+  border-radius: 14px;
+  background: rgba(19, 23, 26, 0.8);
+
+  &:hover {
+    background: var(--ifm-color-primary)
+  }
 }

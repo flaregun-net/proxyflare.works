@@ -19,9 +19,8 @@ export const ExpandableCode: FC<{
         <button
           type="button"
           className={clsx(
-            "button",
+            "button button--outline button--primary",
             styles.button,
-            "button--outline button--link",
           )}
           {...getToggleProps()}
         >
