@@ -94,7 +94,7 @@ const config = {
             "aria-label": "Flaregun on Github",
           },
           {
-            href: "https://discord.gg/YcDwujEH",
+            href: "https://discord.gg/ZqeZsA3qCT",
             position: "right",
             className: "header-discord-link",
             "aria-label": "Flaregun on Discord",
