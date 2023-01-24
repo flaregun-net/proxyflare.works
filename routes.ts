@@ -41,7 +41,7 @@ export const redirectRoute = (host: string) => ({
 
 export const staticRoute = (host: string) => ({
   from: { pattern: `${host}/robots.txt` },
-  to: { text: "X-Robots-Tag: noindex" },
+  to: { text: "User-agent: * \n Disallow: /wp-admin/" },
   headers: {
     response: {
       "content-type": "text/plain",

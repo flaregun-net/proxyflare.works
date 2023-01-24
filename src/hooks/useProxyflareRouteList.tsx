@@ -211,7 +211,7 @@ export const useProxyflareRouteList = () => {
           exampleRouteDiagram: (
             <RouteDiagram
               from={`${hostname}/robots.txt`}
-              to="X-Robots-Tag: noindex"
+              to="robots.txt SEO file"
             />
           ),
           description:
