@@ -3,6 +3,7 @@ import React, { useMemo } from "react"
 import {
   apiRoute,
   docsRoute,
+  r2BucketRoute,
   redirectRoute,
   staticRoute,
   websocketRoute,
@@ -38,8 +39,9 @@ const routeMetadata: RouteMetadata[] = [
   [startingRouteLine + 1, "websocketRoute", colors[1], selectedColors[1]],
   [startingRouteLine + 2, "wordpressRoute", colors[2], selectedColors[2]],
   [startingRouteLine + 3, "docusaurusRoute", colors[3], selectedColors[3]],
-  [startingRouteLine + 4, "redirectRoute", colors[4], selectedColors[4]],
+  [startingRouteLine + 4, "r2BucketRoute", colors[4], selectedColors[4]],
   [startingRouteLine + 5, "staticTextRoute", colors[5], selectedColors[5]],
+  [startingRouteLine + 6, "redirectRoute", colors[0], selectedColors[0]],
 ]
 
 export const scaffold = `
@@ -55,6 +57,7 @@ export const onRequest: PagesFunction[] = [
        ${routeMetadata[3][1]},
        ${routeMetadata[4][1]},
        ${routeMetadata[5][1]},
+       ${routeMetadata[6][1]},
      ]
     }
   })(context)
@@ -174,29 +177,32 @@ export const useProxyflareRouteList = () => {
       ],
       [
         {
-          title: "Redirect traffic to another domain",
-          url: removeWildcards(redirectRoute(hostname).from.pattern),
+          title: "Serve content from a private Cloudflare R2 bucket",
+          url: `https://${hostname}/pics/cat-2.png`,
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
           exampleRouteDiagram: (
             <RouteDiagram
-              from={`${hostname}/blog/old-slug`}
-              to={`${hostname}/blog/new-slug`}
+              from={`${hostname}/pics/cat-1.png`}
+              to={`https://flaregun.r2.com/cat-pics`}
             />
           ),
           description:
-            "Proxyflare can redirect traffic from absolute or wildcard pathnames on your domain to other places on the internet.",
+            "Proxyflare can serve content from a private Cloudflare R2 object storage bucket.",
           explanation: (
             <>
-              Provide a <code>statusCode</code> to redirect traffic to a page or
-              part of your domain with the desired response code.
+              Mount a private R2 bucket on any part of your domain by providing
+              the bucket metadata and a valid{" "}
+              <a href="https://dash.cloudflare.com/?account=r2/overview/api-tokens">
+                R2 API token
+              </a>
             </>
           ),
           metadata: routeMetadata[4],
           snippet: (
             <SyntaxHighlighter
-              value={`const redirectRoute = ${JSON.stringify(
-                redirectRoute(hostname),
+              value={`const r2BucketRoute = ${JSON.stringify(
+                r2BucketRoute(hostname),
                 null,
                 2,
               )}`}
@@ -227,6 +233,38 @@ export const useProxyflareRouteList = () => {
             <SyntaxHighlighter
               value={`const staticRoute = ${JSON.stringify(
                 staticRoute(hostname),
+                null,
+                2,
+              )}`}
+            />
+          ),
+        },
+      ],
+      [
+        {
+          title: "Redirect traffic to another domain",
+          url: removeWildcards(redirectRoute(hostname).from.pattern),
+          docsUrl:
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
+          exampleRouteDiagram: (
+            <RouteDiagram
+              from={`${hostname}/blog/old-slug`}
+              to={`${hostname}/blog/new-slug`}
+            />
+          ),
+          description:
+            "Proxyflare can redirect traffic from absolute or wildcard pathnames on your domain to other places on the internet.",
+          explanation: (
+            <>
+              Provide a <code>statusCode</code> to redirect traffic to a page or
+              part of your domain with the desired response code.
+            </>
+          ),
+          metadata: routeMetadata[6],
+          snippet: (
+            <SyntaxHighlighter
+              value={`const redirectRoute = ${JSON.stringify(
+                redirectRoute(hostname),
                 null,
                 2,
               )}`}

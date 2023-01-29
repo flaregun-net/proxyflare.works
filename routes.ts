@@ -48,3 +48,15 @@ export const staticRoute = (host: string) => ({
     },
   },
 })
+
+export const r2BucketRoute = (host: string) => ({
+  from: { pattern: `${host}/pics/*` },
+  to: {
+    r2Bucket: {
+      accountId: `env.R2_ACCOUNT_ID`,
+      accessKeyId: `env.R2_ACCESS_KEY_ID`,
+      secretAccessKey: `env.R2_SECRET_ACCESS_KEY`,
+      bucketName: "proxyflare-r2-test-private",
+    },
+  },
+})
