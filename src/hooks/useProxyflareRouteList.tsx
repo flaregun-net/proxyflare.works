@@ -3,7 +3,8 @@ import React, { useMemo } from "react"
 import {
   apiRoute,
   docsRoute,
-  r2BucketRoute,
+  privateR2BucketRoute,
+  publicR2BucketRoute,
   redirectRoute,
   staticRoute,
   websocketRoute,
@@ -38,10 +39,11 @@ const routeMetadata: RouteMetadata[] = [
   [startingRouteLine, "apiRoute", colors[0], selectedColors[0]],
   [startingRouteLine + 1, "websocketRoute", colors[1], selectedColors[1]],
   [startingRouteLine + 2, "wordpressRoute", colors[2], selectedColors[2]],
-  [startingRouteLine + 3, "docusaurusRoute", colors[3], selectedColors[3]],
-  [startingRouteLine + 4, "r2BucketRoute", colors[4], selectedColors[4]],
-  [startingRouteLine + 5, "staticTextRoute", colors[5], selectedColors[5]],
-  [startingRouteLine + 6, "redirectRoute", colors[0], selectedColors[0]],
+  [startingRouteLine + 3, "reactRoute", colors[3], selectedColors[3]],
+  [startingRouteLine + 4, "privateR2BucketRoute", colors[4], selectedColors[4]],
+  [startingRouteLine + 5, "publicR2BucketRoute", colors[5], selectedColors[5]],
+  [startingRouteLine + 6, "staticTextRoute", colors[0], selectedColors[0]],
+  [startingRouteLine + 7, "redirectRoute", colors[1], selectedColors[1]],
 ]
 
 export const scaffold = `
@@ -58,6 +60,7 @@ export const onRequest: PagesFunction[] = [
        ${routeMetadata[4][1]},
        ${routeMetadata[5][1]},
        ${routeMetadata[6][1]},
+       ${routeMetadata[7][1]},
      ]
     }
   })(context)
@@ -166,7 +169,7 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[3],
           snippet: (
             <SyntaxHighlighter
-              value={`const docusaurusRoute = ${JSON.stringify(
+              value={`const reactRoute = ${JSON.stringify(
                 docsRoute(hostname),
                 null,
                 2,
@@ -177,14 +180,18 @@ export const useProxyflareRouteList = () => {
       ],
       [
         {
-          title: "Serve content from a private Cloudflare R2 bucket",
-          url: `https://${hostname}/pics/cat-2.png`,
+          title: (
+            <>
+              Serve content from a <i>private</i> Cloudflare R2 bucket
+            </>
+          ),
+          url: `https://${hostname}/private-pics/cat-2.png`,
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
           exampleRouteDiagram: (
             <RouteDiagram
-              from={`${hostname}/pics/cat-1.png`}
-              to={`https://flaregun.r2.com/cat-pics`}
+              from={`${hostname}/private-pics`}
+              to={`cat-pics.r2.com`}
             />
           ),
           description:
@@ -201,14 +208,49 @@ export const useProxyflareRouteList = () => {
           metadata: routeMetadata[4],
           snippet: (
             <SyntaxHighlighter
-              value={`const r2BucketRoute = ${JSON.stringify(
-                r2BucketRoute(hostname),
+              value={`const privateR2BucketRoute = ${JSON.stringify(
+                privateR2BucketRoute(hostname),
                 null,
                 2,
               )}`}
             />
           ),
         },
+        {
+          title: (
+            <>
+              Serve content from a <i>public</i> Cloudflare R2 bucket
+            </>
+          ),
+          url: `https://${hostname}/public-pics/cat-1.png`,
+          docsUrl:
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
+          exampleRouteDiagram: (
+            <RouteDiagram
+              from={`${hostname}/public-pics`}
+              to="pub-ec6768.r2.dev"
+            />
+          ),
+          description:
+            "Proxyflare can serve content from a public Cloudflare R2 object storage bucket.",
+          explanation: (
+            <>
+              Mount a public R2 bucket on any part of your domain with a simple configuration
+            </>
+          ),
+          metadata: routeMetadata[5],
+          snippet: (
+            <SyntaxHighlighter
+              value={`const publicR2BucketRoute = ${JSON.stringify(
+                publicR2BucketRoute(hostname),
+                null,
+                2,
+              )}`}
+            />
+          ),
+        },
+      ],
+      [
         {
           title: "Serve static files such as robots.txt",
           url: removeWildcards(staticRoute(hostname).from.pattern),
@@ -222,7 +264,7 @@ export const useProxyflareRouteList = () => {
           ),
           description:
             "Proxyflare can serve a text file on any URL on your domain.",
-          metadata: routeMetadata[5],
+          metadata: routeMetadata[6],
           explanation: (
             <>
               Serve HTML, JSON, and metadata files by providing the file text
@@ -239,8 +281,6 @@ export const useProxyflareRouteList = () => {
             />
           ),
         },
-      ],
-      [
         {
           title: "Redirect traffic to another domain",
           url: removeWildcards(redirectRoute(hostname).from.pattern),
@@ -260,7 +300,7 @@ export const useProxyflareRouteList = () => {
               part of your domain with the desired response code.
             </>
           ),
-          metadata: routeMetadata[6],
+          metadata: routeMetadata[7],
           snippet: (
             <SyntaxHighlighter
               value={`const redirectRoute = ${JSON.stringify(

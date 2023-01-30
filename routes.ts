@@ -49,8 +49,8 @@ export const staticRoute = (host: string) => ({
   },
 })
 
-export const r2BucketRoute = (host: string) => ({
-  from: { pattern: `${host}/pics/*` },
+export const privateR2BucketRoute = (host: string) => ({
+  from: { pattern: `${host}/private-pics/*` },
   to: {
     r2Bucket: {
       accountId: `env.R2_ACCOUNT_ID`,
@@ -58,5 +58,12 @@ export const r2BucketRoute = (host: string) => ({
       secretAccessKey: `env.R2_SECRET_ACCESS_KEY`,
       bucketName: "proxyflare-r2-test-private",
     },
+  },
+})
+
+export const publicR2BucketRoute = (host: string) => ({
+  from: { pattern: `${host}/public-pics/*` },
+  to: {
+    url: "pub-ec6768.r2.dev",
   },
 })

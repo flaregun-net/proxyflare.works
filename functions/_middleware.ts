@@ -36,7 +36,7 @@ export const onRequest: PagesFunction<{
         redirectRoute(host),
         staticRoute(host),
         {
-          from: { pattern: `${host}/pics/*` },
+          from: { pattern: `${host}/private-pics/*` },
           to: {
             r2Bucket: {
               accountId: R2_ACCOUNT_ID,
@@ -44,6 +44,12 @@ export const onRequest: PagesFunction<{
               secretAccessKey: R2_SECRET_ACCESS_KEY,
               bucketName: "proxyflare-r2-test-private",
             },
+          },
+        },
+        {
+          from: { pattern: `${host}/public-pics/*` },
+          to: {
+            url: "https://pub-bb8ae7f5e04b4a969f9a9dabefec6768.r2.dev",
           },
         },
       ],
