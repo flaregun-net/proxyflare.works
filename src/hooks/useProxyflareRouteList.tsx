@@ -1,5 +1,5 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import React, { useMemo } from "react"
+import { useMemo } from "react"
 import {
   apiRoute,
   docsRoute,
@@ -235,7 +235,8 @@ export const useProxyflareRouteList = () => {
             "Proxyflare can serve content from a public Cloudflare R2 object storage bucket.",
           explanation: (
             <>
-              Mount a public R2 bucket on any part of your domain with a simple configuration
+              Mount a public R2 bucket on any part of your domain with a simple
+              configuration
             </>
           ),
           metadata: routeMetadata[5],
@@ -287,10 +288,7 @@ export const useProxyflareRouteList = () => {
           docsUrl:
             "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/redirecting-traffic",
           exampleRouteDiagram: (
-            <RouteDiagram
-              from={`${hostname}/blog/old-slug`}
-              to={`${hostname}/blog/new-slug`}
-            />
+            <RouteDiagram from={`${hostname}/redirect`} to={"example.com"} />
           ),
           description:
             "Proxyflare can redirect traffic from absolute or wildcard pathnames on your domain to other places on the internet.",
