@@ -198,7 +198,7 @@ export const useProxyflareRouteList = () => {
           ),
           url: `https://${hostname}/private-pics/cat-2.png`,
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/tutorials/proxying-cloudflare-r2-buckets",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-cloudflare-r2-buckets",
           exampleRouteDiagram: (
             <RouteDiagram
               from={`${hostname}/private-pics`}
@@ -235,7 +235,7 @@ export const useProxyflareRouteList = () => {
           ),
           url: `https://${hostname}/public-pics/cat-1.png`,
           docsUrl:
-            "https://flaregun.net/docs/latest/proxyflare/tutorials/proxying-cloudflare-r2-buckets",
+            "https://flaregun.net/docs/latest/proxyflare/plugin/tutorials/proxying-cloudflare-r2-buckets",
           exampleRouteDiagram: (
             <RouteDiagram
               from={`${hostname}/public-pics`}

@@ -14,19 +14,21 @@ export default function Home() {
   const [selectedLineNumber, setSelectedLineNumber] = useState<number>()
 
   const scrollToExample = (route: Route, lineNumber?: number) => {
-    const { element, metadata } = getRouteElement(lineNumber, route)
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 40,
-        behavior: "smooth",
-      })
+    if (globalWindow) {
+      const { element, metadata } = getRouteElement(lineNumber, route)
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 40,
+          behavior: "smooth",
+        })
 
-      setSelectedLineNumber(metadata[0])
+        setSelectedLineNumber(metadata[0])
 
-      if (history.pushState) {
-        history.pushState(null, null, `#${metadata[1]}`)
-      } else {
-        location.hash = "#myhash"
+        if (history.pushState) {
+          history.pushState(null, null, `#${metadata[1]}`)
+        } else {
+          location.hash = "#myhash"
+        }
       }
     }
   }
@@ -34,10 +36,10 @@ export default function Home() {
   useEffect(() => {
     if (globalWindow.location.hash) {
       scrollToExample({
-        metadata: [undefined, window.location.hash.slice(1)],
+        metadata: [undefined, globalWindow.location.hash.slice(1)],
       } as unknown as Route)
     }
-  }, [globalWindow.location.hash])
+  }, [globalWindow && globalWindow.location.hash])
 
   const handleLineClick = (route: Route, lineNumber: number) => {
     scrollToExample(route, lineNumber)
