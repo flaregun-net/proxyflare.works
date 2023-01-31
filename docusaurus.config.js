@@ -70,7 +70,10 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["markdown"],
       },
-
+      announcementBar: {
+        id: "announcementBar-1", // Increment on change
+        content: `🚀  proxyflare-for-pages@0.1.0 is live! Serve public and private R2 buckets from anywhere on your domain. Try it out and let us know what you think!`,
+      },
       navbar: {
         hideOnScroll: true,
         title: "Proxyflare",
