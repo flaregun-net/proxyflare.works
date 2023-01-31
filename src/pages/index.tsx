@@ -1,10 +1,11 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Polygon from "@site/static/icons/polygon-background.svg"
 import Layout from "@theme/Layout"
-import React, { useState } from "react"
+import { useEffect, useState } from "react"
 import { HomepageFeatures } from "../components/HomepageFeatures"
 import { HomepageHeader } from "../components/HomepageHeader"
-import { useProxyflareRouteList } from "../hooks/useProxyflareRouteList"
+import { Route, useProxyflareRouteList } from "../hooks/useProxyflareRouteList"
+import { globalWindow } from "../utils/globalWindow"
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext()
@@ -12,8 +13,8 @@ export default function Home() {
 
   const [selectedLineNumber, setSelectedLineNumber] = useState<number>()
 
-  const handleLineClick = (lineNumber: number) => {
-    const { element, metadata } = getRouteElement(lineNumber)
+  const scrollToExample = (route: Route, lineNumber?: number) => {
+    const { element, metadata } = getRouteElement(lineNumber, route)
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 40,
@@ -21,7 +22,25 @@ export default function Home() {
       })
 
       setSelectedLineNumber(metadata[0])
+
+      if (history.pushState) {
+        history.pushState(null, null, `#${metadata[1]}`)
+      } else {
+        location.hash = "#myhash"
+      }
     }
+  }
+
+  useEffect(() => {
+    if (globalWindow.location.hash) {
+      scrollToExample({
+        metadata: [undefined, window.location.hash.slice(1)],
+      } as unknown as Route)
+    }
+  }, [globalWindow.location.hash])
+
+  const handleLineClick = (route: Route, lineNumber: number) => {
+    scrollToExample(route, lineNumber)
   }
 
   return (

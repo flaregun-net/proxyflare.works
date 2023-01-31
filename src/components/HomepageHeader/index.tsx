@@ -1,14 +1,16 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import clsx from "clsx"
-import React from "react"
-import { useProxyflareRouteList } from "../../hooks/useProxyflareRouteList"
+import {
+  Route,
+  useProxyflareRouteList,
+} from "../../hooks/useProxyflareRouteList"
 import SyntaxHighlighter from "../SyntaxHighlighter"
 import styles from "./styles.module.scss"
 
 export function HomepageHeader({
   onCodeLineClick,
 }: {
-  onCodeLineClick: (lineNum: number) => void
+  onCodeLineClick: (route: Route, lineNumber: number) => void
 }) {
   const { siteConfig } = useDocusaurusContext()
   const { routes, scaffold } = useProxyflareRouteList()
@@ -75,7 +77,7 @@ export function HomepageHeader({
                         marginBottom: 2,
                         backgroundColor: found.metadata[2],
                       },
-                      onClick: () => onCodeLineClick(i),
+                      onClick: () => onCodeLineClick(found, i),
                     }
                   }}
                 />

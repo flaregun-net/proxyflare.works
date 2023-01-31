@@ -1,5 +1,7 @@
 import { RouteMetadata } from "@site/src/hooks/useProxyflareRouteList"
-import React, { FC } from "react"
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard"
+import CopyIcon from "@site/static/icons/copy.svg"
+import { FC, useState } from "react"
 import { ExpandableCode } from "../ExpandableCode"
 
 export const Feature: FC<{
@@ -25,7 +27,16 @@ export const Feature: FC<{
   ...styles
 }) => {
   const [, routeName, color, selectedColor] = metadata
+  const [value, copy] = useCopyToClipboard()
+  const [timer, setTimer] = useState(false)
 
+  const doCopy = (url: string) => {
+    copy(url)
+    setTimer(true)
+    setTimeout(() => {
+      setTimer(false)
+    }, 2200)
+  }
   return (
     <div
       id={routeName}
@@ -61,15 +72,33 @@ export const Feature: FC<{
       </div>
 
       <div className="row">
-        <div className="col col--12">
-          <a href={url} className="margin-right--sm">
-            <button className="button button--primary">Try it</button>
-          </a>
-          <a href={docsUrl}>
-            <button className="button button--outline button--primary">
-              Read the docs
-            </button>
-          </a>
+        <div
+          className="col col--12"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <div>
+            <a href={url} className="margin-right--sm">
+              <button className="button button--primary">Try it</button>
+            </a>
+            <a href={docsUrl}>
+              <button className="button button--outline button--primary">
+                Read the docs
+              </button>
+            </a>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {value && timer && (
+              <div style={{ marginRight: 4, fontSize: 12 }}>
+                Copied link to clipboard
+              </div>
+            )}
+            <CopyIcon
+              fill="#0B89D0"
+              width={30}
+              style={{ cursor: "pointer" }}
+              onClick={() => doCopy(`${window.location.origin}#${metadata[1]}`)}
+            />
+          </div>
         </div>
       </div>
     </div>

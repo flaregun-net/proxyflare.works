@@ -67,6 +67,17 @@ export const onRequest: PagesFunction[] = [
 ]
 `
 
+export type Route = {
+  title: JSX.Element | string
+  url: string
+  docsUrl: string
+  exampleRouteDiagram: JSX.Element
+  description: string
+  explanation: JSX.Element | string
+  metadata: RouteMetadata
+  snippet: JSX.Element
+}
+
 export const useProxyflareRouteList = () => {
   const { siteConfig } = useDocusaurusContext()
   const routes = useMemo(() => {
@@ -316,8 +327,14 @@ export const useProxyflareRouteList = () => {
   return {
     routes,
     scaffold,
-    getRouteElement: (lineNumber: number) => {
-      const metadata = routeMetadata.find((meta) => meta[0] === lineNumber)
+    getRouteElement: (lineNumber: number, route: Route) => {
+      let metadata = routeMetadata.find((meta) => meta[0] === lineNumber)
+      console.log("here")
+
+      if (!metadata && route) {
+        console.log("down here")
+        metadata = routeMetadata.find((meta) => meta[1] === route.metadata[1])
+      }
 
       if (!metadata) return {}
 
